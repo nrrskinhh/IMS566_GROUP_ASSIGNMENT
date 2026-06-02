@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Bookings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sb-sidenav-toggled">
+    <div class="d-flex" id="wrapper">
+        <div class="bg-dark border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-gold text-dark text-center py-3"><i class="bi bi-building-fill-gear fs-4 me-2"></i> EASTON HOTEL</div>
+            <div class="list-group list-group-flush">
+                <a href="dashboard.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+                <a href="rooms.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="bi bi-door-open me-2"></i> Rooms</a>
+                <a href="bookings.html" class="list-group-item list-group-item-action bg-dark text-white active"><i class="bi bi-calendar-check me-2"></i> Bookings</a>
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white mt-5"><i class="bi bi-box-arrow-left me-2"></i> Logout</a>
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-secondary btn-sm" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                    <div class="ms-auto d-flex align-items-center"><span class="me-3 fw-bold text-secondary d-none d-md-block">Admin</span><img src="https://picsum.photos/seed/admin/40/40" class="rounded-circle border"></div>
+                </div>
+            </nav>
+            <div class="container-fluid px-4 py-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fs-3 fw-bold text-dark">Bookings</h2>
+                    <button class="btn btn-gold" onclick="openBookingModal()"><i class="bi bi-plus-lg me-1"></i> New Booking</button>
+                </div>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle" id="bookingTable">
+                                <thead class="table-light"><tr><th>ID</th><th>Guest</th><th>Room Type</th><th>Date</th><th>Status</th><th>Amount</th><th>Action</th></tr></thead>
+                                <tbody>
+                                    <tr id="row-bk1"><td>#BK-001</td><td><div class="d-flex align-items-center"><img src="https://picsum.photos/seed/u1/30/30" class="rounded-circle me-2"><span class="fw-bold guest-name">Sarah Lee</span></div></td><td class="room-type">Deluxe King</td><td class="checkin-date">2023-10-24</td><td><span class="badge bg-primary booking-status">Confirmed</span></td><td class="amount">$240</td><td><button class="btn btn-sm btn-light border text-primary" onclick="editBooking('bk1')"><i class="bi bi-pencil"></i></button> <button class="btn btn-sm btn-light border text-danger" onclick="deleteBooking('bk1')"><i class="bi bi-trash"></i></button></td></tr>
+                                    <tr id="row-bk2"><td>#BK-002</td><td><div class="d-flex align-items-center"><img src="https://picsum.photos/seed/u2/30/30" class="rounded-circle me-2"><span class="fw-bold guest-name">John Doe</span></div></td><td class="room-type">Standard</td><td class="checkin-date">2023-10-25</td><td><span class="badge bg-secondary booking-status">Pending</span></td><td class="amount">$180</td><td><button class="btn btn-sm btn-light border text-primary" onclick="editBooking('bk2')"><i class="bi bi-pencil"></i></button> <button class="btn btn-sm btn-light border text-danger" onclick="deleteBooking('bk2')"><i class="bi bi-trash"></i></button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="bookingModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content border-0 shadow"><div class="modal-header border-0"><h5 class="modal-title fw-bold" id="bookingModalLabel">New Booking</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form id="bookingForm"><input type="hidden" id="bkId"><div class="mb-3"><label class="small">Guest Name</label><input type="text" class="form-control" id="bkGuest" required></div><div class="row"><div class="col-6 mb-3"><label class="small">Room Type</label><select class="form-select" id="bkType"><option>Deluxe King</option><option>Standard Twin</option><option>Suite Ocean</option></select></div><div class="col-6 mb-3"><label class="small">Amount</label><input type="number" class="form-control" id="bkAmount" required></div></div><div class="row"><div class="col-6 mb-3"><label class="small">Date</label><input type="date" class="form-control" id="bkDate" required></div><div class="col-6 mb-3"><label class="small">Status</label><select class="form-select" id="bkStatus"><option>Confirmed</option><option>Pending</option><option>Checked Out</option></select></div></div></form></div><div class="modal-footer border-0"><button class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button class="btn btn-gold" onclick="saveBooking()">Save</button></div></div></div></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script src="script.js"></script>
+    <script>document.getElementById("sidebarToggle").addEventListener("click",function(e){e.preventDefault();document.getElementById("wrapper").classList.toggle("toggled");document.body.classList.toggle("sb-sidenav-toggled");});</script>
+</body>
+</html>
