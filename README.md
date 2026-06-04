@@ -1,7 +1,7 @@
 Easton Hotel Management System
 
 Project Title: Easton Hotel 
-Description: comprehensive web-based prototype designed to streamline hotel administration tasks, including room inventory management and guest booking tracking. The system features a responsive Emerald theme and real-time data visualization.
+Description: A comprehensive web-based prototype designed to streamline hotel administration tasks, including room inventory management and guest booking tracking. The system features a responsive Emerald theme and real-time data visualization.
 
 Features Included
 Authentication: Secure login simulation (Admin) with error handling.
