@@ -7,7 +7,9 @@ Description: A comprehensive web-based prototype designed to streamline hotel ad
 Features Included
 Authentication: Secure login simulation (Admin) with error handling.
 Dashboard Overview: Real-time statistics (Total Revenue, Bookings, Availability) and interactive charts (Revenue Trend, Room Types).
+
 Room Management: Full CRUD (Create, Read, Update, Delete) capabilities for room inventory.
+
 Booking Management: Complete guest reservation system with status tracking (Confirmed, Pending, Checked Out)
 Responsive Design: Optimized for both desktop and mobile viewing using Bootstrap 5z
 
