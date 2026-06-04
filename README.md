@@ -13,7 +13,8 @@ Features Included
 - Room Management: Full CRUD (Create, Read, Update, Delete) capabilities for room inventory.
 
 - Booking Management: Complete guest reservation system with status tracking (Confirmed, Pending, Checked Out)
-Responsive Design: Optimized for both desktop and mobile viewing using Bootstrap 5
+
+- Responsive Design: Optimized for both desktop and mobile viewing using Bootstrap 5
 
 Instructions to Test Login
 1. Access the live website via the provided GitHub Pages link.
